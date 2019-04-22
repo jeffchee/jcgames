@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+<body>
+    <script>
+
+        var memory_array = ['image1', 'image1', 'image2', 'image2', 'image3', 'image3', 'image4', 'image4', 'image5', 'image5', 'image6', 'image6', 'image7', 'image7', 'image8', 'image8', 'image9', 'image9', 'image10', 'image10', 'image11', 'image11', 'image12', 'image12', 'image13', 'image13', 'image14', 'image14', 'image15', 'image15']
+        var memory_values = [];
+        var memory_tile_ids = [];
+        var tiles_flipped = 0;
+        var counter = 0;
+
+        //shuffle method var memory_tile_shuffle
+        Array.prototype.memory_tile_shuffle = function () {
+            var i = this.length, j, temp;
+            while (--i > 0) {
+                j = Math.floor(Math.random() * (i + 1));
+                temp = this[j];
+                this[j] = this[i];
+                this[i] = temp;
+            }
+        }
+
+        function newBoard() {
+            tiles_flipped = 0;
+            var output = '';
+            var counter = 0;
+            memory_array.memory_tile_shuffle();
+            for (var i = 0; i < memory_array.length; i++) {
+                output += '<div id="tile_' + i + '" onclick="memoryFlipTile(this, \'' + memory_array[i] + '\')"></div>';
+            }
+            document.getElementById('memory_board').innerHTML = output;
+            document.getElementById('counterBoard').innerHTML = counter;
+        }
+
+        function memoryFlipTile(tile, val) {
+            counter++;
+            if (tile.innerHTML == "" && memory_values.length < 2) {
+                tile.style.background = '#FFF';
+                tile.innerHTML = '<img src="./image/' + val + '.png" style="height:70px; width:70px; position:center"/>';
+
+                if (memory_values.length == 0) {
+                    memory_values.push(val);
+                    memory_tile_ids.push(tile.id);
+                    document.getElementById('counterBoard').innerHTML = counter;
+                } else if (memory_values.length == 1) {
+                    document.getElementById('counterBoard').innerHTML = counter;
+                    memory_values.push(val);
+                    memory_tile_ids.push(tile.id);
+                    if (memory_values[0] == memory_values[1]) {
+                        tiles_flipped += 2;
+                        //clear both arrays
+                        memory_values = [];
+                        memory_tile_ids = [];
+                        //check to see if the whole board is cleared
+                        if (tiles_flipped == memory_array.length) {
+                            alert("Board cleared... generating new board");
+                            document.getElementById('memory_board').innerHTML = "";
+                            counter = 0;
+                            newBoard();
+                            
+                        }
+                    } else {
+                        function flip2Back() {
+                            //Flip the 2 tiles back over
+                            var tile_1 = document.getElementById(memory_tile_ids[0]);
+                            var tile_2 = document.getElementById(memory_tile_ids[1]);
+                            tile_1.style.background = 'url(./image/images.png) 15% 15%  no-repeat';
+                            tile_1.innerHTML = "";
+                            tile_2.style.background = 'url(./image/images.png) 15% 15%  no-repeat';
+                            tile_2.innerHTML = "";
+                            //Clear both arrays
+                            memory_values = [];
+                            memory_tile_ids = [];
+                        }
+                        setTimeout(flip2Back, 800);
+
+                    }
+                }
+            }
+        }
+
+
+    </script>
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-outline-primary float-right"><span id=counterBoard> </span> Clicks</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-outline-danger float-left" onclick="newBoard(); counter = 0">Reset</button>
+        </div>
+    </div>
+<br>
+    <div id="memory_board"></div>
+
+    <script>newBoard();</script>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+ .jumbotron {
+      background-image: url(./OP_pic/OPtitle.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity:0.8;
+      margin-bottom: 1rem;
+  }
+
+  div.container {
+    background-image: url(./OP_pic/e2cd515fd68b3e338dea3e181d85054809897809_hq.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity:0.8; 
+}
+
+footer {
+    background-image: url(./OP_pic/OPorangebackdrop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity:0.5;
+    background-position: center;
+}
+
+.card-header {
+    background-image: url(./OP_pic/one-piece-wallpapers-26026-7944630.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity:0.8;
+    background-position: center;
+}
+
+body {
+    background-color:rgb(187, 187, 187);
+}
+

@@ -1,0 +1,17 @@
+
+#jumboimg {
+    background-image: url("./Image/Screen-Shot-2017-10-15-at-12.42.20.png");
+    background-size: cover;
+    height: 400px;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(194, 194, 194);
+    color: white;
+    text-align: center;
+    padding: 8px;
+ }

@@ -1,0 +1,26 @@
+
+div#memory_board{
+    background:url(./image/basketballCourt.jpg) no-repeat;
+    background-size: cover;
+    border:#999 2px solid;
+    width: 750px;
+    height:600px;
+    padding:12px;
+    margin:0px auto;
+}
+
+div#memory_board > div{
+    background:url(./image/nbab.jpg) no-repeat;
+    background-size: cover;
+    border:#000 3px solid;
+    width: 105px;
+    height:105px;
+    float:left;
+    margin:6px;
+    padding:20px;
+    font-size:64px;
+    cursor:pointer;
+    text-align:center;
+    position: static
+
+}
