@@ -75,20 +75,19 @@
     function checkWin () {
 
         if (currentScore > targetScore) {
-
+            loseCounter++;
             confirm("You Lose!play again!");
             $("#lose-counter").text(loseCounter);
-            loseCounter++;
            setTimeout(function() {
             gameStart();
            }, 50); 
         }
 
         else if (currentScore === targetScore) {
-
+            winCounter++;
             confirm("You win! play again!");
             $("#win-counter").text(winCounter);
-            winCounter++;
+            
             setTimeout(function() {
                 gameStart();
                }, 50); 
@@ -96,7 +95,7 @@
         }
     }
 
-    document.ready
+
     $("#diamond").click(function () {
 
         addValues(cards.diamond);
@@ -144,7 +143,6 @@
         currentScore += clickedStone.value;
         $("#your-score").text(currentScore);
         $('#barCS').css('width', currentScore + '%').attr('aria-valuenow', currentScore);
-        document.removeEventListener("click",addValues);
         checkWin();
         console.log("Your Score: " + currentScore);
 

@@ -1,8 +1,12 @@
 
-#jumboimg {
-    background-image: url("./Image/Screen-Shot-2017-10-15-at-12.42.20.png");
+.jumbotron {
+    background-image: url("./Image/PCC.png");
     background-size: cover;
-    height: 400px;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    position: relative;
   }
 
   .footer {
@@ -14,4 +18,11 @@
     color: white;
     text-align: center;
     padding: 8px;
+ }
+ 
+ body {
+   background-image: url("");
+   background-size: cover;
+    background-repeat: no-repeat;
+
  }
