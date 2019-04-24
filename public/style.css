@@ -1,6 +1,6 @@
 
 .jumbotron {
-    background-image: url("./public/Image/PCC.png");
+    background-image: url("./Image/PCC.png");
     background-size: cover;
     height: 360px;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@
  }
  
  body {
-    background-image: url("./public/Image/PACPAC.jpg");
+    background-image: url("./Image/PACPAC.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
