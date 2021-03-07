@@ -21,6 +21,33 @@ div#memory_board > div{
     font-size:64px;
     cursor:pointer;
     text-align:center;
-    position: static
+    position: static;
+    box-shadow: 2px 2px black;
+}
 
+.tile.id :hover{
+
+  background-color:black;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 5.2em;
+    background: -webkit-linear-gradient(left, #17408B ,white,  #c9082A);
+   background: -o-linear-gradient(right, #17408B ,white,  #c9082A);
+   background: -moz-linear-gradient(right, #17408B ,white,  #c9082A);
+   background: linear-gradient(right, #17408B ,white,  #c9082A); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px;
+}
+
+
+.container{
+background-color: #5f5e5d;
+padding-top: 3%;
+padding-bottom:5%;
+border:5px solid black;
+box-shadow: 2px 2px rgb(218, 38, 38);
 }

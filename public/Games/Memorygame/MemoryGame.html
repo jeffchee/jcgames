@@ -14,8 +14,25 @@
 
 
 <body>
-    <script>
 
+<div class="container">
+<h1> Memory Game</h1>
+
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-outline-primary float-right"><span id=counterBoard> </span> Clicks</button>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-outline-danger float-left" onclick="newBoard(); counter = 0">Reset</button>
+    </div>
+</div>
+<br>
+<div id="memory_board"></div>
+</div>
+
+
+
+    <script>
         var memory_array = ['image1', 'image1', 'image2', 'image2', 'image3', 'image3', 'image4', 'image4', 'image5', 'image5', 'image6', 'image6', 'image7', 'image7', 'image8', 'image8', 'image9', 'image9', 'image10', 'image10', 'image11', 'image11', 'image12', 'image12', 'image13', 'image13', 'image14', 'image14', 'image15', 'image15']
         var memory_values = [];
         var memory_tile_ids = [];
@@ -94,15 +111,7 @@
 
 
     </script>
-    <div class="row">
-        <div class="col">
-            <button type="button" class="btn btn-outline-primary float-right"><span id=counterBoard> </span> Clicks</button>
-        </div>
-        <div class="col">
-            <button type="button" class="btn btn-outline-danger float-left" onclick="newBoard(); counter = 0">Reset</button>
-        </div>
-    </div>
-    <div id="memory_board"></div>
+    
 
     <script>newBoard();</script>
 
